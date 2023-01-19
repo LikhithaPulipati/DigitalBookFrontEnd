@@ -1,0 +1,31 @@
+<h3>New User Sign Up</h3>
+
+<form [formGroup]="credentialsForm">
+    <div class="col=xs-12">
+
+        Username : <input #username formControlName="username" type="text" placeholder="Enter Username" />
+    </div>
+    <br />
+    <div class="col=xs-12">
+        User First Name : <input #userfname formControlName="userfname" type="text" placeholder="Enter first name" />
+    </div>
+    <br />
+    <div class="col=xs-12">
+        User Last Name : <input #userlname formControlName="userlname" type="text" placeholder="Enter last name" />
+    </div>
+    <br />
+    <div class="col=xs-12">
+        Password : <input #password formControlName="password" type="password" placeholder="Enter Password" />
+    </div>
+    <br />
+    <div class="col=xs-12">
+        Role : <input #role formControlName="role" type="text" placeholder="Enter role of user" />
+    </div>
+    <br />
+    <div class="col=xs-12">
+        <input type="button" value="Sign Up"
+            (click)="signup(username.value,userfname.value,userlname.value,password.value,role.value)"
+            [disabled]="credentialsForm.invalid" />
+    </div>
+
+</form>

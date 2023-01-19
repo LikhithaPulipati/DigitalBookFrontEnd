@@ -1,0 +1,35 @@
+<div class="container">
+    <h3>Log In</h3>
+    
+    <div class="card mb-3 " id="secondDiv"style="max-width: 540px;">
+        <form [formGroup]="credentialsForm">
+            
+                <div class="col=xs-12" >
+                    <span style="padding-left: 8px;">
+                        Username :</span> 
+                        <span class="mt-3 h5" style="margin-left: 2px;">
+                        <input #username formControlName="username" type="text"
+                        placeholder="Enter Username" /></span>
+                </div>
+
+            
+            <br />
+            <div class="col=xs-12">
+                <div class="form-group">
+                    <span style="padding-left: 8px;">
+                        Password :</span>
+                        <span class="mt-3 h5" style="margin-left: 2px;">
+                         <input #password formControlName="password" type="password"
+                        placeholder="Enter Password" />
+                        </span>
+                </div>
+            </div>
+            <br />
+            <div class="col=xs-12">
+                <input type="button" value="Log In" class="loginButton" (click)="login(username.value,password.value)"
+                    [disabled]="credentialsForm.invalid" />
+            </div>
+
+        </form>
+    </div>
+</div>

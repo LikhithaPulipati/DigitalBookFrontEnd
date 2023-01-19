@@ -1,0 +1,21 @@
+<h3>Search Books</h3>
+
+
+<form [formGroup]="searchForm">
+
+    <div class="col=xs-12">
+        Book Id: <input #bookId formControlName="bookId" type="text" placeholder="Enter id to view content" />
+</div>
+<br />
+    <input type="button" value="Search" (click)="findBookContent(bookId.value)" [disabled]="searchForm.invalid" />
+
+    <!-- <p *ngIf="searchForm.invalid">Error: Form is invalid</p> -->
+
+</form>
+
+
+<div class="contentDiv">
+<div class="card mb-3 " style="max-width: 300px;max-height: 200px">
+<p>{{message}}</p>
+</div>
+</div>

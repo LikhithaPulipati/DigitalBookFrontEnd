@@ -1,0 +1,81 @@
+<!-- <h3>My Books</h3>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Logo</th>
+      <th>Price</th>
+      <th>Author</th>
+      <th>Author ID</th>
+      <th>Publisher</th>
+      <th>Published Date</th>
+      <th>Active</th>
+      <th>Content</th>
+      <th>Subscription</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bookDto of bookPayload;let i=index">
+      <td>{{bookDto.id}}</td>
+      <td>{{bookDto.title}}</td>
+      <td>{{bookDto.category}}</td>
+      <td>{{bookDto.logoImage}}</td>
+      <td>{{bookDto.price}}</td>
+      <td>{{bookDto.author}}</td>
+      <td>{{bookDto.author_id}}</td>
+      <td>{{bookDto.publisher}}</td>
+      <td>{{bookDto.publishedDate}}</td>
+      <td>{{bookDto.active}}</td>
+      <td>{{bookDto.content}}</td>
+      <td>{{bookDto.subscription}}</td>
+      <td>
+        <input type="button" value="UnSubscribe" (click)="unsubscribeBook(bookDto.id!)" />
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="container" style="margin-top :20px">
+  <h5 style ="text-align: center;">Hey!! Here are your subscriptions</h5>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let bookDto of bookPayload; let i = index;">
+      <div class="card mb-3 " style="max-width: 540px">
+        <div class="row no-gutters">
+          <div class="col-md-6" style="max-width: 30%;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiVQ-OWyJzjU8w_2-jFsO8ez9uhyWAFxjbJg&usqp=CAU" class="card-img" alt="..." height="150px" />
+            <br><br>
+            <span style="padding-left: 8px;">Price</span>
+            <span class="mt-3 h5" style="margin-left: 2px;">{{bookDto.price}}</span>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <span>Book ID</span>
+              <h5 class="card-title">{{bookDto.id}} <h6> with category {{bookDto.category}}</h6>
+              </h5>
+              <span>Title</span>
+              <h5 class="card-title">{{bookDto.title}}</h5>
+              <span>Author</span>
+              <h5 class="card-title">{{bookDto.author}}</h5>
+              <p class="card-text">
+                <small> {{bookDto.content}} </small>
+              </p>
+              <div class="col=xs-12">
+                <input type="button" value="UnSubscribe" (click)="unsubscribeBook(bookDto.id!)" />
+              </div>
+              <!-- <div class="col=xs-12">
+                <input type="button" value="Read Content" (click)="readBookContent(bookDto.id!)" />
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <p>{{message}}</p>
+</div>

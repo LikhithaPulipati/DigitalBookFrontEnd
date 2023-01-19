@@ -1,0 +1,45 @@
+<h3>My Books</h3>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Logo</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>Author ID</th>
+            <th>Publisher</th>
+            <th>Published Date</th>
+            <th>Active</th>
+            <th>Content</th>
+            <th>Subscription</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bookDto of bookPayload.bookDtoList;let i=index">
+            <!--<td>{{bookDto.id}}</td>-->
+            <td>{{bookDto.title}}</td>
+            <td>{{bookDto.category}}</td>
+            <td>{{bookDto.logoImage}}</td>
+            <td>{{bookDto.price}}</td>
+            <td>{{bookDto.author}}</td>
+            <td>{{bookDto.author_id}}</td>
+            <td>{{bookDto.publisher}}</td>
+            <td>{{bookDto.publishedDate}}</td>
+            <td>{{bookDto.active}}</td>
+            <td>{{bookDto.content}}</td>
+            <td>{{bookDto.subscription}}</td>
+            <td><input 
+                type="button"
+                value="Edit"
+                (click)="editBook(bookDto)"/></td>
+                 
+            <td><input 
+                type="button"
+                value="{{getToggleButtonValue(bookDto.active)}}"
+                (click)="toggleActive(bookDto)"/></td>
+        </tr>
+    </tbody>
+</table>
